@@ -1,3 +1,5 @@
+using SunamoValues;
+
 namespace SunamoClipboard;
 
 
@@ -44,7 +46,7 @@ public class ClipboardHelper
         var t = GetText();
 
 
-        return SHSplit.SplitByWhiteSpaces(t);
+        return t.Split(AllChars.whiteSpacesChars.ToArray()).ToList();
     }
 
     public static List<string> GetLines()
