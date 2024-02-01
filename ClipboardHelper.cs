@@ -1,6 +1,7 @@
+namespace SunamoClipboard;
+
 using SunamoValues;
 
-namespace SunamoClipboard;
 
 
 
