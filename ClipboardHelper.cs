@@ -1,10 +1,12 @@
-namespace SunamoClipboard;
 
 
-
-
-
-
+namespace
+#if SunamoCl
+SunamoCl
+#else
+    SunamoClipboard
+#endif
+;
 
 
 /// <summary>
