@@ -1,3 +1,5 @@
+
+namespace SunamoClipboard;
 public class TranslateAble
 {
     

@@ -1,3 +1,5 @@
+
+namespace SunamoClipboard;
 using System.Collections;
 using System.Net;
 using System.Text;
