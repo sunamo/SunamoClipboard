@@ -1,10 +1,3 @@
-namespace
-#if SunamoCl
-SunamoCl
-#else
-SunamoClipboard
-#endif
-;
 /// <summary>
 /// Cant add another methods with void and normal - methods have same signature, despite return were different
 /// </summary>
