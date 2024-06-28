@@ -1,7 +1,7 @@
 namespace SunamoClipboard;
 
 
-public class SH
+internal class SH
 {
-    //public static Func<string, List<string>> SplitByWhiteSpaces;
+    //internal static Func<string, List<string>> SplitByWhiteSpaces;
 }
