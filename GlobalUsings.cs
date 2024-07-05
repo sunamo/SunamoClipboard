@@ -5,6 +5,13 @@ global using System.Text;
 global using System.Collections.Generic;
 global using System.Collections;
 global using System.IO;
-
 global using System.Diagnostics.CodeAnalysis;
 global using System.Reflection;
+global using SunamoClipboard;
+global using SunamoClipboard._sunamo.SunamoString;
+global using SunamoClipboard._sunamo.SunamoStringGetLines;
+global using SunamoClipboard._sunamo.SunamoValues;
+global using SunamoClipboard._sunamo.SunamoXlfKeys;
+global using SunamoClipboard._public.SunamoInterfaces.Interfaces;
+global using SunamoClipboard._sunamo.SunamoExceptions.OnlyInSE;
+global using SunamoClipboard._sunamo.SunamoExceptions._AddedToAllCsproj;

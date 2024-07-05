@@ -1,5 +1,5 @@
 
-namespace SunamoClipboard;
+namespace SunamoClipboard._sunamo.SunamoValues;
 internal class AllChars
 {
     internal static List<char> vsZnakyWithoutSpecial;

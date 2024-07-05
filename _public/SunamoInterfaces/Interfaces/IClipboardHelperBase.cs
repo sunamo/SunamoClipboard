@@ -1,4 +1,4 @@
-namespace SunamoClipboard;
+namespace SunamoClipboard._public.SunamoInterfaces.Interfaces;
 
 
 public interface IClipboardHelperBase<String, ListString, Bool>

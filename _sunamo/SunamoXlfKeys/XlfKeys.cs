@@ -1,4 +1,4 @@
-namespace SunamoClipboard;
+namespace SunamoClipboard._sunamo.SunamoXlfKeys;
 
 
 
