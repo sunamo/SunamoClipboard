@@ -15,3 +15,6 @@ global using SunamoClipboard._sunamo.SunamoXlfKeys;
 global using SunamoClipboard._public.SunamoInterfaces.Interfaces;
 global using SunamoClipboard._sunamo.SunamoExceptions.OnlyInSE;
 global using SunamoClipboard._sunamo.SunamoExceptions._AddedToAllCsproj;
+global using System.Diagnostics;
+global using System.Net;
+global using System.Threading.Tasks;
