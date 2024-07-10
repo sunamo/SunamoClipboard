@@ -11,13 +11,15 @@
     <RepositoryUrl>https://github.com/sunamo/SunamoClipboard.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>readme.md</PackageReadmeFile>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="readme.md" Pack="True" PackagePath="." />
   </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DefineConstants>$(DefineConstants);ASYNC;SunamoClipboard</DefineConstants>
+    <DefineConstants>$(DefineConstants);ASYNC;SunamoClipboard;SunamoClipboard.csproj</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DefineConstants>$(DefineConstants);ASYNC;SunamoClipboard</DefineConstants>
+    <DefineConstants>$(DefineConstants);ASYNC;SunamoClipboard;SunamoClipboard.csproj</DefineConstants>
   </PropertyGroup>
 </Project>
