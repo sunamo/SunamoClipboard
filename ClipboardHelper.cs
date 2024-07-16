@@ -1,4 +1,5 @@
 namespace SunamoClipboard;
+
 /// <summary>
 /// Cant add another methods with void and normal - methods have same signature, despite return were different
 /// </summary>

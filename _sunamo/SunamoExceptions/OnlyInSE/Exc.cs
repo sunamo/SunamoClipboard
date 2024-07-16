@@ -1,9 +1,5 @@
 namespace SunamoClipboard._sunamo.SunamoExceptions.OnlyInSE;
 
-
-
-
-
 internal class Exc
 {
     
