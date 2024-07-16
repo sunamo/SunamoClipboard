@@ -11,3 +11,4 @@ global using SunamoClipboard._public.SunamoInterfaces.Interfaces;
 global using SunamoClipboard._sunamo.SunamoExceptions.OnlyInSE;
 global using System.Diagnostics;
 global using System.Net;
+global using SunamoClipboard._sunamo.SunamoString;

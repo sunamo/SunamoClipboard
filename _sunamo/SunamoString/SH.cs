@@ -1,4 +1,4 @@
-//namespace SunamoClipboard._sunamo.SunamoString;
+namespace SunamoClipboard._sunamo.SunamoString;
 
 internal class SH
 {

@@ -1,4 +1,4 @@
-//namespace SunamoClipboard._sunamo.SunamoExceptions._AddedToAllCsproj;
+namespace SunamoClipboard._sunamo;
 
 internal class CA
 {
