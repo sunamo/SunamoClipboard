@@ -1,34 +1,16 @@
-namespace SunamoClipboard;
 
-/// <summary>
-/// Cant add another methods with void and normal - methods have same signature, despite return were different
-/// </summary>
-public class ClipboardHelper
+namespace SunamoClipboard;
+using SunamoClipboard._sunamo.SunamoStringGetLines;
+using TextCopy;
+
+public static class ClipboardHelper
 {
-    public static IClipboardHelper Instance = null;
-    public static IClipboardHelperApps InstanceApps = null;
-    private ClipboardHelper() { }
-    public static bool ContainsText()
-    {
-        if (Instance == null)
-        {
-            return InstanceApps.ContainsText();
-        }
-        else
-        {
-            return Instance.ContainsText();
-        }
-    }
+    const string n = "\n";
+
     public static string GetText()
     {
-        if (Instance == null)
-        {
-            return InstanceApps.GetText();
-        }
-        else
-        {
-            return Instance.GetText();
-        }
+        var text = ClipboardService.GetText();
+        return text == null ? string.Empty : "";
     }
     public static List<string> GetLinesAllWhitespaces()
     {
@@ -37,16 +19,12 @@ public class ClipboardHelper
     }
     public static List<string> GetLines()
     {
-#if !UNITTEST
-        if (Instance == null)
+        var text = ClipboardService.GetText();
+        if (text == null)
         {
-            return InstanceApps.GetLines();
+            return new List<string>();
         }
-        else
-        {
-            return Instance.GetLines();
-        }
-#endif
+        return SHGetLines.GetLines(text);
     }
     /// <summary>
     /// Cant be se or only whitespace => even with ClipboardHelper.SetText(v); => content of clipboard will remain the same
@@ -55,95 +33,19 @@ public class ClipboardHelper
     /// <param name="s"></param>
     public static void SetText(string s)
     {
-#if !UNITTEST
-        if (Instance == null)
-        {
-            InstanceApps.SetText(s);
-        }
-        else
-        {
-            Instance.SetText(s);
-        }
-#endif
-    }
-    public static void SetText2(string s)
-    {
-        if (Instance == null)
-        {
-            InstanceApps.SetText2(s);
-        }
-        else
-        {
-            Instance.SetText2(s);
-        }
-    }
-    public static void SetList(List<string> d)
-    {
-        if (Instance == null)
-        {
-            InstanceApps.SetList(d);
-        }
-        else
-        {
-            Instance.SetList(d);
-        }
+        ClipboardService.SetText(s);
     }
     public static void SetLines(List<string> lines)
     {
-        if (Instance == null)
-        {
-            InstanceApps.SetLines(lines);
-        }
-        else
-        {
-            Instance.SetLines(lines);
-        }
-    }
-    public static void CutFiles(params string[] selected)
-    {
-        if (Instance == null)
-        {
-            InstanceApps.CutFiles(selected);
-        }
-        else
-        {
-            Instance.CutFiles(selected);
-        }
-    }
-    //public static void SetText(TextBuilder stringBuilder)
-    //{
-    //    if (Instance == null)
-    //    {
-    //        InstanceApps.SetText(stringBuilder);
-    //    }
-    //    else
-    //    {
-    //        Instance.SetText(stringBuilder);
-    //    }
-    //}
-    public static void SetText3(string s)
-    {
-        if (Instance == null)
-        {
-            InstanceApps.SetText3(s);
-        }
-        else
-        {
-            Instance.SetText3(s);
-        }
+        SetText(string.Join("\n", lines));
     }
     public static void SetText(StringBuilder stringBuilder)
     {
-        if (Instance == null)
-        {
-            InstanceApps.SetText(stringBuilder.ToString());
-        }
-        else
-        {
-            Instance.SetText(stringBuilder.ToString());
-        }
+        ClipboardService.SetText(stringBuilder.ToString());
     }
     public static void SetDictionary<T1, T2>(Dictionary<T1, T2> charEntity, string delimiter)
+        where T1 : notnull
+        where T2 : notnull
     {
         StringBuilder sb = new StringBuilder();
         foreach (var item in charEntity)
@@ -163,16 +65,4 @@ public class ClipboardHelper
         var st = Exc.GetStackTrace(true);
         AppendText(st);
     }
-    //public static string GetText()
-    //{
-    //    return Instance.GetText();
-    //}
-    //public static List<string> GetLines()
-    //{
-    //    return Instance.GetLines();
-    //}
-    //public static bool ContainsText()
-    //{
-    //    return Instance.ContainsText();
-    //}
 }

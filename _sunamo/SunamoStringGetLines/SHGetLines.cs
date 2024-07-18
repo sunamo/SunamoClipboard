@@ -26,11 +26,11 @@ internal class SHGetLines
 
                 if (rn.Length > 1)
                 {
-                    ThrowEx.Custom("cannot contain any \r\n, pass already split by this pattern");
+                    throw new Exception("cannot contain any \r\n, pass already split by this pattern");
                 }
                 else if (nr.Length > 1)
                 {
-                    ThrowEx.Custom("cannot contain any \n\r, pass already split by this pattern");
+                    throw new Exception("cannot contain any \n\r, pass already split by this pattern");
                 }
             }
 
