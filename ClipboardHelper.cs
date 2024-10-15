@@ -1,6 +1,5 @@
-using TextCopy;
-
 namespace SunamoClipboard;
+using TextCopy;
 
 public static class ClipboardHelper
 {
@@ -61,9 +60,4 @@ public static class ClipboardHelper
         SetText(t);
     }
 
-    public static void AppendStackTrace()
-    {
-        var st = Exc.GetStackTrace(true);
-        AppendText(st);
-    }
 }

@@ -16,17 +16,14 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="_sunamo\SunamoExceptions\**" />
     <Compile Remove="_sunamo\SunamoStringGetLines\**" />
     <Compile Remove="_sunamo\SunamoString\**" />
     <Compile Remove="_sunamo\SunamoValues\**" />
     <Compile Remove="_sunamo\SunamoXlfKeys\**" />
-    <EmbeddedResource Remove="_sunamo\SunamoExceptions\**" />
     <EmbeddedResource Remove="_sunamo\SunamoStringGetLines\**" />
     <EmbeddedResource Remove="_sunamo\SunamoString\**" />
     <EmbeddedResource Remove="_sunamo\SunamoValues\**" />
     <EmbeddedResource Remove="_sunamo\SunamoXlfKeys\**" />
-    <None Remove="_sunamo\SunamoExceptions\**" />
     <None Remove="_sunamo\SunamoStringGetLines\**" />
     <None Remove="_sunamo\SunamoString\**" />
     <None Remove="_sunamo\SunamoValues\**" />
@@ -37,7 +34,6 @@
     <Compile Remove="_sunamo\FS.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="_sunamo\SunamoExceptions\OnlyInSE\Exc.cs" />
     <Compile Include="_sunamo\SunamoStringGetLines\SHGetLines.cs" />
     <Compile Include="_sunamo\SunamoValues\AllChars.cs" />
   </ItemGroup>
