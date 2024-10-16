@@ -1,4 +1,6 @@
 namespace SunamoClipboard;
+
+
 using TextCopy;
 
 public static class ClipboardHelper
@@ -13,8 +15,10 @@ public static class ClipboardHelper
 
     public static List<string> GetLinesAllWhitespaces()
     {
+        WhitespaceCharService whitespaceChars = new WhitespaceCharService();
+
         var t = GetText();
-        return t.Split(AllChars.whiteSpacesChars.ToArray()).ToList();
+        return t.Split(whitespaceChars.whiteSpaceChars.ToArray()).ToList();
     }
 
     public static List<string> GetLines()

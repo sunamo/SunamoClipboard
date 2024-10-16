@@ -18,15 +18,12 @@
   <ItemGroup>
     <Compile Remove="_sunamo\SunamoStringGetLines\**" />
     <Compile Remove="_sunamo\SunamoString\**" />
-    <Compile Remove="_sunamo\SunamoValues\**" />
     <Compile Remove="_sunamo\SunamoXlfKeys\**" />
     <EmbeddedResource Remove="_sunamo\SunamoStringGetLines\**" />
     <EmbeddedResource Remove="_sunamo\SunamoString\**" />
-    <EmbeddedResource Remove="_sunamo\SunamoValues\**" />
     <EmbeddedResource Remove="_sunamo\SunamoXlfKeys\**" />
     <None Remove="_sunamo\SunamoStringGetLines\**" />
     <None Remove="_sunamo\SunamoString\**" />
-    <None Remove="_sunamo\SunamoValues\**" />
     <None Remove="_sunamo\SunamoXlfKeys\**" />
   </ItemGroup>
   <ItemGroup>
@@ -35,7 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="_sunamo\SunamoStringGetLines\SHGetLines.cs" />
-    <Compile Include="_sunamo\SunamoValues\AllChars.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.md" Pack="True" PackagePath="." />
