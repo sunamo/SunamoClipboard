@@ -25,6 +25,7 @@
     <None Remove="_sunamo\SunamoStringGetLines\**" />
     <None Remove="_sunamo\SunamoString\**" />
     <None Remove="_sunamo\SunamoXlfKeys\**" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="*" Pack="True" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="_sunamo\CA.cs" />
