@@ -10,7 +10,6 @@ global using System.Reflection;
 global using System.Net;
 global using System.Diagnostics;
 global using SunamoClipboard;
-
 global using TextCopy;
 global using ILogger = Microsoft.Extensions.Logging.ILogger;
 global using Microsoft.Extensions.Logging;
