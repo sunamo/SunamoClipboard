@@ -1,3 +1,6 @@
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoClipboard;
 
 public static class ClipboardHelper
@@ -11,8 +14,8 @@ public static class ClipboardHelper
     public static List<string> GetLinesAllWhitespaces()
     {
         WhitespaceCharService whitespaceChars = new WhitespaceCharService();
-        var t = GetText();
-        return t.Split(whitespaceChars.whiteSpaceChars.ToArray()).ToList();
+        var temp = GetText();
+        return temp.Split(whitespaceChars.whiteSpaceChars.ToArray()).ToList();
     }
     public static List<string> GetLines()
     {
@@ -25,9 +28,9 @@ public static class ClipboardHelper
     ///     Must
     /// </summary>
     /// <param name="s"></param>
-    public static void SetText(string s)
+    public static void SetText(string text)
     {
-        ClipboardService.SetText(s);
+        ClipboardService.SetText(text);
     }
     public static void SetLines(List<string> lines)
     {
@@ -41,14 +44,14 @@ public static class ClipboardHelper
         where T1 : notnull
         where T2 : notnull
     {
-        var sb = new StringBuilder();
-        foreach (var item in charEntity) sb.AppendLine(item.Key + delimiter + item.Value);
-        SetText(sb.ToString());
+        var stringBuilder = new StringBuilder();
+        foreach (var item in charEntity) stringBuilder.AppendLine(item.Key + delimiter + item.Value);
+        SetText(stringBuilder.ToString());
     }
     public static void AppendText(string ext)
     {
-        var t = GetText();
-        t += Environment.NewLine + Environment.NewLine + ext;
-        SetText(t);
+        var temp = GetText();
+        temp += Environment.NewLine + Environment.NewLine + ext;
+        SetText(temp);
     }
 }
