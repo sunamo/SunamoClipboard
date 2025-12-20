@@ -1,3 +1,4 @@
+// variables names: ok
 // EN: Variable names have been checked and replaced with self-descriptive names
 // CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
 
@@ -5,7 +6,7 @@ namespace SunamoClipboard;
 
 public static class ClipboardHelper
 {
-    private const string n = "\n";
+    private const string newLine = "\n";
     public static string GetText()
     {
         var text = ClipboardService.GetText();
@@ -14,8 +15,8 @@ public static class ClipboardHelper
     public static List<string> GetLinesAllWhitespaces()
     {
         WhitespaceCharService whitespaceChars = new WhitespaceCharService();
-        var temp = GetText();
-        return temp.Split(whitespaceChars.whiteSpaceChars.ToArray()).ToList();
+        var text = GetText();
+        return text.Split(whitespaceChars.WhiteSpaceChars.ToArray()).ToList();
     }
     public static List<string> GetLines()
     {
@@ -27,7 +28,7 @@ public static class ClipboardHelper
     ///     Cant be se or only whitespace => even with ClipboardHelper.SetText(v); => content of clipboard will remain the same
     ///     Must
     /// </summary>
-    /// <param name="s"></param>
+    /// <param name="text"></param>
     public static void SetText(string text)
     {
         ClipboardService.SetText(text);
@@ -40,18 +41,18 @@ public static class ClipboardHelper
     {
         ClipboardService.SetText(stringBuilder.ToString());
     }
-    public static void SetDictionary<T1, T2>(Dictionary<T1, T2> charEntity, string delimiter)
+    public static void SetDictionary<T1, T2>(Dictionary<T1, T2> dictionary, string delimiter)
         where T1 : notnull
         where T2 : notnull
     {
         var stringBuilder = new StringBuilder();
-        foreach (var item in charEntity) stringBuilder.AppendLine(item.Key + delimiter + item.Value);
+        foreach (var item in dictionary) stringBuilder.AppendLine(item.Key + delimiter + item.Value);
         SetText(stringBuilder.ToString());
     }
-    public static void AppendText(string ext)
+    public static void AppendText(string textToAppend)
     {
-        var temp = GetText();
-        temp += Environment.NewLine + Environment.NewLine + ext;
-        SetText(temp);
+        var currentText = GetText();
+        currentText += Environment.NewLine + Environment.NewLine + textToAppend;
+        SetText(currentText);
     }
 }
