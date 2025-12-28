@@ -1,8 +1,11 @@
+// variables names: ok
+// EN: Variable names have been checked and replaced with self-descriptive names
+// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
+
 namespace SunamoClipboard;
 
 public static class ClipboardHelper
 {
-    private const string newLine = "\n";
     public static string GetText()
     {
         var text = ClipboardService.GetText();
@@ -21,7 +24,7 @@ public static class ClipboardHelper
         return SHGetLines.GetLines(text);
     }
     /// <summary>
-    ///     Cant be se or only whitespace => even with ClipboardHelper.SetText(v); => content of clipboard will remain the same
+    ///     Cant be se or only whitespace => even with ClipboardHelper.SetText(text); => content of clipboard will remain the same
     ///     Must
     /// </summary>
     /// <param name="text"></param>
