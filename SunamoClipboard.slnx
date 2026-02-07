@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="SunamoClipboard.Tests\\SunamoClipboard.Tests.csproj" />
+  <Project Path="RunnerClipboard\\RunnerClipboard.csproj" />
+  <Project Path="SunamoClipboard\SunamoClipboard.csproj" />
+</Solution>
