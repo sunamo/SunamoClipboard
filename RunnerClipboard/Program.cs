@@ -1,11 +1,14 @@
 // variables names: ok
-// EN: Variable names have been checked and replaced with self-descriptive names
-// CZ: Názvy proměnných byly zkontrolovány a nahrazeny samopopisnými názvy
-
 namespace RunnerClipboard;
 
+/// <summary>
+/// Entry point for the clipboard runner application.
+/// </summary>
 internal class Program
 {
+    /// <summary>
+    /// Main entry point.
+    /// </summary>
     static void Main()
     {
         Console.WriteLine("Hello, World!");

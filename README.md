@@ -1,24 +1,25 @@
 # SunamoClipboard
 
-Working with clipboard
+A platform-independent .NET library for working with the system clipboard.
 
 ## Overview
 
-SunamoClipboard is part of the Sunamo package ecosystem, providing modular, platform-independent utilities for .NET development.
+SunamoClipboard is part of the Sunamo package ecosystem, providing modular, platform-independent clipboard utilities for .NET development. It wraps [TextCopy](https://github.com/CopyText/TextCopy) to offer a simplified API for getting and setting clipboard text, lines, and dictionaries.
 
 ## Main Components
 
-### Key Classes
+### ClipboardHelper
 
-- **ClipboardHelper**
+Static helper class providing the following methods:
 
-### Key Methods
-
-- `GetText()`
-- `GetLinesAllWhitespaces()`
-- `GetLines()`
-- `SetText()`
-- `SetLines()`
+- `GetText()` - Gets text from the clipboard.
+- `GetLines()` - Gets lines from the clipboard split by newline characters.
+- `GetLinesAllWhitespaces()` - Gets lines from the clipboard split by all whitespace characters.
+- `SetText(string text)` - Sets text to the clipboard.
+- `SetText(StringBuilder stringBuilder)` - Sets text from a StringBuilder to the clipboard.
+- `SetLines(List<string> list)` - Sets multiple lines to the clipboard joined by newlines.
+- `SetDictionary<T1, T2>(Dictionary<T1, T2> dictionary, string delimiter)` - Sets a dictionary to the clipboard with a custom delimiter.
+- `AppendText(string textToAppend)` - Appends text to existing clipboard content.
 
 ## Installation
 
@@ -26,23 +27,17 @@ SunamoClipboard is part of the Sunamo package ecosystem, providing modular, plat
 dotnet add package SunamoClipboard
 ```
 
+## Target Frameworks
+
+- .NET 10.0
+- .NET 9.0
+- .NET 8.0
+
 ## Dependencies
 
-- **Microsoft.Extensions.Logging.Abstractions** (v9.0.3)
+- **Microsoft.Extensions.Logging.Abstractions** (v10.0.2)
 - **TextCopy** (v6.2.1)
-
-## Package Information
-
-- **Package Name**: SunamoClipboard
-- **Version**: 25.3.29.1
-- **Target Framework**: net9.0
-- **Category**: Platform-Independent NuGet Package
-- **Source Files**: 3
-
-## Related Packages
-
-This package is part of the Sunamo package ecosystem. For more information about related packages, visit the main repository.
 
 ## License
 
-See the repository root for license information.
+MIT

@@ -1,7 +1,7 @@
 namespace SunamoClipboard;
 
 /// <summary>
-/// Provides helper methods for working with the clipboard.
+/// Provides helper methods for working with the system clipboard.
 /// </summary>
 public static class ClipboardHelper
 {
@@ -12,7 +12,7 @@ public static class ClipboardHelper
     public static string GetText()
     {
         var text = ClipboardService.GetText();
-        return text == null ? string.Empty : "";
+        return text ?? string.Empty;
     }
 
     /// <summary>
@@ -21,9 +21,9 @@ public static class ClipboardHelper
     /// <returns>A list of strings split by whitespace characters.</returns>
     public static List<string> GetLinesAllWhitespaces()
     {
-        WhitespaceCharService whitespaceChars = new WhitespaceCharService();
+        WhitespaceCharService whitespaceCharService = new WhitespaceCharService();
         var text = GetText();
-        return text.Split(whitespaceChars.WhiteSpaceChars.ToArray()).ToList();
+        return text.Split(whitespaceCharService.WhiteSpaceChars.ToArray()).ToList();
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ public static class ClipboardHelper
 
     /// <summary>
     /// Sets text to the clipboard.
-    /// Note: Cannot be empty or only whitespace - if the text is empty, the clipboard content will remain unchanged.
+    /// Cannot be empty or only whitespace - if the text is empty, the clipboard content will remain unchanged.
     /// </summary>
     /// <param name="text">The text to set to the clipboard.</param>
     public static void SetText(string text)
@@ -50,10 +50,10 @@ public static class ClipboardHelper
     /// <summary>
     /// Sets multiple lines to the clipboard, joined by newline characters.
     /// </summary>
-    /// <param name="lines">The list of lines to set to the clipboard.</param>
-    public static void SetLines(List<string> lines)
+    /// <param name="list">The list of lines to set to the clipboard.</param>
+    public static void SetLines(List<string> list)
     {
-        SetText(string.Join("\n", lines));
+        SetText(string.Join("\n", list));
     }
 
     /// <summary>
