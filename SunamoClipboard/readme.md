@@ -7,7 +7,7 @@ Part of PlatformIndependentNuGetPackages:
 - [nuget.org](https://www.nuget.org/profiles/sunamo)
 - [github.org](https://github.com/sunamo/PlatformIndependentNuGetPackages)
 
-Another links:
+Other links:
 
 - [Developer site](https://sunamo.cz)
 

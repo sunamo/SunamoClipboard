@@ -6,15 +6,15 @@ namespace SunamoClipboard._sunamo.SunamoStringGetLines;
 internal class SHGetLines
 {
     /// <summary>
-    /// Splits the input text into lines, handling various newline formats (CRLF, LFCR, CR, LF).
+    /// Splits the text into lines, handling various newline formats (CRLF, LFCR, CR, LF).
     /// </summary>
-    /// <param name="input">The input text to split into lines.</param>
-    /// <returns>A list of lines from the input text.</returns>
-    internal static List<string> GetLines(string input)
+    /// <param name="text">The text to split into lines.</param>
+    /// <returns>A list of lines from the text.</returns>
+    internal static List<string> GetLines(string text)
     {
-        var parts = input.Split(new string[] { "\r\n", "\n\r" }, StringSplitOptions.None).ToList();
-        SplitByUnixNewline(parts);
-        return parts;
+        var lines = text.Split(new string[] { "\r\n", "\n\r" }, StringSplitOptions.None).ToList();
+        SplitByUnixNewline(lines);
+        return lines;
     }
 
     /// <summary>
