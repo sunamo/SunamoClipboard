@@ -20,43 +20,43 @@ internal class SHGetLines
     /// <summary>
     /// Splits lines by Unix-style newline characters (CR and LF).
     /// </summary>
-    /// <param name="lines">The list of lines to split.</param>
-    private static void SplitByUnixNewline(List<string> lines)
+    /// <param name="list">The list to split by Unix newline characters.</param>
+    private static void SplitByUnixNewline(List<string> list)
     {
-        SplitBy(lines, "\r");
-        SplitBy(lines, "\n");
+        SplitBy(list, "\r");
+        SplitBy(list, "\n");
     }
 
     /// <summary>
     /// Splits lines by the specified delimiter, ensuring no CRLF or LFCR patterns remain.
     /// </summary>
-    /// <param name="lines">The list of lines to split.</param>
+    /// <param name="list">The list to split by the specified delimiter.</param>
     /// <param name="delimiter">The delimiter to split by.</param>
-    /// <exception cref="Exception">Thrown if the lines contain CRLF or LFCR patterns when splitting by CR.</exception>
-    private static void SplitBy(List<string> lines, string delimiter)
+    /// <exception cref="Exception">Thrown if the list contains CRLF or LFCR patterns when splitting by CR.</exception>
+    private static void SplitBy(List<string> list, string delimiter)
     {
-        for (int i = lines.Count - 1; i >= 0; i--)
+        for (int i = list.Count - 1; i >= 0; i--)
         {
             if (delimiter == "\r")
             {
-                var carriageReturnNewlineParts = lines[i].Split(new string[] { "\r\n" }, StringSplitOptions.None);
-                var newlineCarriageReturnParts = lines[i].Split(new string[] { "\n\r" }, StringSplitOptions.None);
+                var carriageReturnNewlineParts = list[i].Split(new string[] { "\r\n" }, StringSplitOptions.None);
+                var newlineCarriageReturnParts = list[i].Split(new string[] { "\n\r" }, StringSplitOptions.None);
 
                 if (carriageReturnNewlineParts.Length > 1)
                 {
-                    throw new Exception("cannot contain any \r\name, pass already split by this pattern");
+                    throw new Exception("Text cannot contain \\r\\n at this stage, it should already be split by this pattern");
                 }
                 else if (newlineCarriageReturnParts.Length > 1)
                 {
-                    throw new Exception("cannot contain any \n\r, pass already split by this pattern");
+                    throw new Exception("Text cannot contain \\n\\r at this stage, it should already be split by this pattern");
                 }
             }
 
-            var splitParts = lines[i].Split(new string[] { delimiter }, StringSplitOptions.None);
+            var splitParts = list[i].Split(new string[] { delimiter }, StringSplitOptions.None);
 
             if (splitParts.Length > 1)
             {
-                InsertOnIndex(lines, splitParts.ToList(), i);
+                InsertOnIndex(list, splitParts.ToList(), i);
             }
         }
     }
