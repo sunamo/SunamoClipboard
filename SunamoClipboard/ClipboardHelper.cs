@@ -21,7 +21,7 @@ public static class ClipboardHelper
     /// <returns>A list of strings split by whitespace characters.</returns>
     public static List<string> GetLinesAllWhitespaces()
     {
-        WhitespaceCharService whitespaceCharService = new WhitespaceCharService();
+        WhitespaceCharService whitespaceCharService = new();
         var text = GetText();
         return text.Split(whitespaceCharService.WhiteSpaceChars.ToArray()).ToList();
     }
@@ -33,7 +33,7 @@ public static class ClipboardHelper
     public static List<string> GetLines()
     {
         var text = ClipboardService.GetText();
-        if (text == null) return new List<string>();
+        if (text is null) return [];
         return SHGetLines.GetLines(text);
     }
 
