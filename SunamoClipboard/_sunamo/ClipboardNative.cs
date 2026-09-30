@@ -1,8 +1,7 @@
 namespace SunamoClipboard._sunamo;
-#if NET9_0_WINDOWS || NET8_0_WINDOWS || NET10_0_WINDOWS || WINDOWS
+
 using System.Runtime.InteropServices;
 
-namespace SunamoClipboard._sunamo;
 
 /// <summary>
 /// Minimal user32 P/Invoke declarations needed by ClipboardMonitor (copied from SunamoPInvoke to keep this package flat).
@@ -35,4 +34,3 @@ internal static class ClipboardNative
     [return: MarshalAs(UnmanagedType.Bool)]
     internal static extern bool RemoveClipboardFormatListener(IntPtr hwnd);
 }
-#endif
