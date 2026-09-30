@@ -29,24 +29,8 @@
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Remove="_sunamo\SunamoStringGetLines\**" />
-    <Compile Remove="_sunamo\SunamoString\**" />
-    <Compile Remove="_sunamo\SunamoXlfKeys\**" />
-    <EmbeddedResource Remove="_sunamo\SunamoStringGetLines\**" />
-    <EmbeddedResource Remove="_sunamo\SunamoString\**" />
-    <EmbeddedResource Remove="_sunamo\SunamoXlfKeys\**" />
-    <None Remove="_sunamo\SunamoStringGetLines\**" />
-    <None Remove="_sunamo\SunamoString\**" />
-    <None Remove="_sunamo\SunamoXlfKeys\**" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.2" Pack="True" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="10.0.102" PrivateAssets="all" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Remove="_sunamo\CA.cs" />
-    <Compile Remove="_sunamo\FS.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="_sunamo\SunamoStringGetLines\SHGetLines.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.md" Pack="True" PackagePath="." />
