@@ -1,7 +1,7 @@
+namespace SunamoClipboard;
 #if NET9_0_WINDOWS || NET8_0_WINDOWS || NET10_0_WINDOWS || WINDOWS
 using System.Windows.Interop;
 
-namespace SunamoClipboard;
 
 /// <summary>
 /// Listens to Windows clipboard-update notifications and invokes a callback whenever
