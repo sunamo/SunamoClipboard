@@ -1,3 +1,4 @@
+namespace SunamoClipboard._sunamo;
 #if NET9_0_WINDOWS || NET8_0_WINDOWS || NET10_0_WINDOWS || WINDOWS
 using System.Runtime.InteropServices;
 
