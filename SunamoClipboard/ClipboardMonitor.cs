@@ -1,7 +1,5 @@
 #if NET9_0_WINDOWS || NET8_0_WINDOWS || NET10_0_WINDOWS || WINDOWS
 using System.Windows.Interop;
-using SunamoInterfaces.Interfaces;
-using SunamoPInvoke.PInvoke;
 
 namespace SunamoClipboard;
 
@@ -9,7 +7,7 @@ namespace SunamoClipboard;
 /// Listens to Windows clipboard-update notifications and invokes a callback whenever
 /// the clipboard content changes. Only available on Windows (WPF) targets.
 /// </summary>
-public sealed class ClipboardMonitor : IDisposable, IClipboardMonitor
+public sealed class ClipboardMonitor : IDisposable
 {
     /// <summary>
     /// Singleton instance of the clipboard monitor.
@@ -36,7 +34,7 @@ public sealed class ClipboardMonitor : IDisposable, IClipboardMonitor
     /// Message-only window source used to receive WM_CLIPBOARDUPDATE notifications.
     /// Not available in Mono.
     /// </summary>
-    private readonly HwndSource hwndSource = new(0, 0, 0, 0, 0, 0, 0, null, W32.HWND_MESSAGE);
+    private readonly HwndSource hwndSource = new(0, 0, 0, 0, 0, 0, 0, null, ClipboardNative.HWND_MESSAGE);
 
     /// <summary>
     /// Last text content read from the clipboard.
@@ -50,7 +48,7 @@ public sealed class ClipboardMonitor : IDisposable, IClipboardMonitor
         try
         {
             hwndSource.AddHook(WndProc);
-            W32.AddClipboardFormatListener(hwndSource.Handle);
+            ClipboardNative.AddClipboardFormatListener(hwndSource.Handle);
         }
         catch (Exception)
         {
@@ -63,7 +61,7 @@ public sealed class ClipboardMonitor : IDisposable, IClipboardMonitor
     /// </summary>
     public void Dispose()
     {
-        W32.RemoveClipboardFormatListener(hwndSource.Handle);
+        ClipboardNative.RemoveClipboardFormatListener(hwndSource.Handle);
         hwndSource.RemoveHook(WndProc);
         hwndSource.Dispose();
     }
@@ -82,7 +80,7 @@ public sealed class ClipboardMonitor : IDisposable, IClipboardMonitor
         {
             AfterSet = false;
         }
-        else if (msg == W32.WM_CLIPBOARDUPDATE)
+        else if (msg == ClipboardNative.WM_CLIPBOARDUPDATE)
         {
             if (LastText is null)
             {

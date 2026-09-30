@@ -66,10 +66,6 @@
   <PropertyGroup Condition="'$(TargetFramework)'=='net9.0-windows'">
     <UseWPF>true</UseWPF>
   </PropertyGroup>
-  <ItemGroup Condition="'$(TargetFramework)'=='net9.0-windows'">
-    <PackageReference Include="SunamoInterfaces" Version="*" />
-    <PackageReference Include="SunamoPInvoke" Version="*" />
-  </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)'!='net9.0-windows'">
     <Compile Remove="ClipboardMonitor.cs" />
   </ItemGroup>
