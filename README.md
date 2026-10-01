@@ -1,5 +1,10 @@
 # SunamoClipboard
 
+## Short description
+
+Knihovna pro práci se schránkou: `ClipboardHelper` (čtení a zápis textu přes TextCopy), `ClipboardMonitor` (sledování změn schránky) a nativní P/Invoke volání (`ClipboardNative`). Obsahuje polyfilly pro net48.
+Balíček je self-contained: P/Invoke deklarace a pomocné string helpery jsou zkopírované lokálně (`_sunamo\`), takže nereferencuje jiné Sunamo balíčky.
+
 A platform-independent .NET library for working with the system clipboard.
 
 ## Overview
