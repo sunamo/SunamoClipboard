@@ -1,4 +1,3 @@
-// variables names: ok
 namespace RunnerClipboard;
 
 internal class Program
